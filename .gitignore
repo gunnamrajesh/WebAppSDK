@@ -6,3 +6,5 @@
 /CalculationSDK/.vs/CalculationSDK
 /CalculationSDK/bin/Debug/netstandard2.0
 /CalculationSDK/obj
+/CalculationSDK.Tests/bin/Debug/netcoreapp3.0
+/CalculationSDK.Tests/obj
