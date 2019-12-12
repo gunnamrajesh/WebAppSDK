@@ -35,7 +35,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.BinariesDirectory)'
+    PathtoPublish: '$(Pipeline.Workspace)/**/*.nupkg'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
