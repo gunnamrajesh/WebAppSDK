@@ -34,7 +34,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.BinariesDirectory)'
+    SourceFolder: '$(Build.SourcesDirectory)\CalculationSDK\bin\$(buildConfiguration)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     CleanTargetFolder: true
