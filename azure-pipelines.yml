@@ -32,18 +32,16 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'WebAppSDK'
     publishLocation: 'pipeline'
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.BinariesDirectory)'
-    Contents: '**/*.nupkg'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    flattenFolders: true
 - task: NuGetCommand@2
   inputs:
     command: 'push'
