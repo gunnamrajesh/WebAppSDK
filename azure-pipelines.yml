@@ -32,12 +32,14 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: PublishBuildArtifacts@1
+- task: CopyFiles@2
   inputs:
-    PathtoPublish: '$(Build.BinariesDirectory)'
-    ArtifactName: 'WebAppSDK_NuGet'
-    publishLocation: 'Container'
+    SourceFolder: '$(Build.BinariesDirectory)'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    CleanTargetFolder: true
+    OverWrite: true
+    flattenFolders: true
 
 - task: PublishPipelineArtifact@1
   inputs:
