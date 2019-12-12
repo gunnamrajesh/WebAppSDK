@@ -35,8 +35,8 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Pipeline.Workspace)/**/*.nupkg'
-    ArtifactName: 'drop'
+    PathtoPublish: '$(Build.BinariesDirectory)'
+    ArtifactName: 'WebAppSDK_NuGet'
     publishLocation: 'Container'
 
 - task: PublishPipelineArtifact@1
