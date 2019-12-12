@@ -42,7 +42,7 @@ steps:
   inputs:
     SourceFolder: '$(Build.BinariesDirectory)'
     Contents: '**'
-    TargetFolder: '$(Build.StagingDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
 - task: NuGetCommand@2
   inputs:
